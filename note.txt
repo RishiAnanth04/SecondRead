@@ -1,0 +1,55 @@
+PATIENT: Michael R.
+AGE: 47
+DATE: 08/24/2026
+
+CHIEF COMPLAINT:
+Progressive shortness of breath and lower-extremity swelling.
+
+HISTORY OF PRESENT ILLNESS:
+47-year-old man presents with a 6-month history of worsening exercise intolerance. He becomes short of breath after walking approximately two blocks and reports increasing fatigue. He has noticed swelling of both ankles, particularly at the end of the day. He sleeps with two pillows because lying completely flat makes his breathing uncomfortable.
+
+He denies chest pain, syncope, palpitations, fever, chills, or hemoptysis. He has not had recent weight loss or night sweats.
+
+PAST MEDICAL HISTORY:
+History of hypertension and hyperlipidemia. No known history of diabetes, chronic kidney disease, liver disease, or prior stroke.
+
+FAMILY HISTORY:
+Father died of myocardial infarction at age 61. Mother has type 2 diabetes and hypertension. Sister has hypothyroidism.
+
+MEDICATIONS:
+Lisinopril 20 mg PO daily.
+Atorvastatin 40 mg PO nightly.
+Furosemide 20 mg PO daily as needed for swelling.
+
+PHYSICAL EXAM:
+Patient appears mildly dyspneic with exertion. Blood pressure is 158/92 mmHg. Heart rate is 96 bpm. Oxygen saturation is 94% on room air. Jugular venous pressure is mildly elevated. Bibasilar crackles are present. There is 2+ bilateral pitting edema of the lower extremities. No cyanosis or clubbing. Neurologic examination shows no focal weakness or sensory loss.
+
+LABORATORY RESULTS:
+Hgb: 13.1 g/dL
+WBC: 8.4 x10^9/L
+Platelets: 242 x10^9/L
+Creatinine: 1.3 mg/dL
+BUN: 24 mg/dL
+Sodium: 137 mmol/L
+Potassium: 4.6 mmol/L
+BNP: 684 pg/mL
+Troponin: 0.01 ng/mL
+LDL: 142 mg/dL
+HbA1c: 5.6%
+TSH: 2.1 mIU/L
+
+IMAGING:
+Chest radiograph demonstrates mild cardiomegaly and pulmonary vascular congestion. No focal pneumonia or pleural effusion.
+
+ASSESSMENT:
+1. Progressive exertional dyspnea.
+2. Bilateral lower-extremity edema.
+3. Orthopnea.
+4. Hypertension, poorly controlled.
+5. Hyperlipidemia.
+6. Elevated BNP concerning for heart failure.
+
+PLAN:
+Increase furosemide to 40 mg daily. Obtain transthoracic echocardiogram. Continue lisinopril and atorvastatin. Patient was advised to monitor daily weights and reduce dietary sodium intake.
+
+No evidence of acute myocardial infarction or focal neurologic deficit.

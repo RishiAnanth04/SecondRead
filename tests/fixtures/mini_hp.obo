@@ -1,0 +1,284 @@
+format-version: 1.2
+data-version: hp/releases/test-fixture
+
+[Term]
+id: HP:0000006
+name: Autosomal dominant inheritance
+alt_id: HP:0001415
+alt_id: HP:0001447
+alt_id: HP:0001448
+alt_id: HP:0001451
+alt_id: HP:0001452
+alt_id: HP:0001455
+alt_id: HP:0001456
+alt_id: HP:0001463
+def: "A mode of inheritance that is observed for traits related to a gene encoded on one of the autosomes (i.e., the human chromosomes 1-22) in which a trait manifests in heterozygotes. In the context of medical genetics, an autosomal dominant disorder is caused when a single copy of the mutant allele is present. Males and females are affected equally, and can both transmit the disorder with a risk of 50% for each child of inheriting the mutant allele." [https://orcid.org/0000-0002-0736-9199]
+synonym: "Autosomal dominant" EXACT []
+synonym: "Autosomal dominant form" RELATED [https://orcid.org/0000-0002-5316-1399]
+synonym: "Autosomal dominant type" RELATED [https://orcid.org/0000-0002-5316-1399]
+synonym: "monoallelic_autosomal" EXACT allelic_requirement []
+xref: SNOMEDCT_US:263681008
+xref: UMLS:C0443147
+is_a: HP:0034345 ! Mendelian inheritance
+
+[Term]
+id: HP:0000252
+name: Microcephaly
+alt_id: HP:0001366
+alt_id: HP:0005485
+alt_id: HP:0005489
+alt_id: HP:0005497
+def: "Head circumference below 2 standard deviations below the mean for age and gender." [PMID:15806441, PMID:19125436, PMID:25465325, PMID:9683597]
+comment: Head circumference is measured from just above the glabella (the most prominent point on the frontal bone above the root of the nose) to the most posterior prominent point of the occipital bone using a tape measure. Some standard charts are organized by centiles, others by standard deviations. It is important to add an indication of how far below the normal standard the head circumference is if an accurate assessment of this can be made. Microcephaly is an absolute term. The term relative microcephaly can be used when the head size centile is less than the centile for height, for example, head size at the 3rd centile with height at the 75% for age and sex. On prenatal ultrasound, microcephaly is diagnosed if the head circumference or the biparietal diameter is more than three standard deviations below the mean. Microcephaly is divided into primary microcephaly, which is present at birth, and secondary microcephaly, which develops postnatally. The crucial difference between these groupings is that primary microcephaly is usually a static developmental anomaly, whereas secondary microcephaly indicates a progressive neurodegenerative condition
+subset: hposlim_core
+synonym: "Abnormally small cranium" EXACT [https://orcid.org/0000-0001-5889-4463]
+synonym: "Abnormally small head" BROAD layperson [https://orcid.org/0000-0001-5889-4463]
+synonym: "Abnormally small skull" EXACT layperson [https://orcid.org/0000-0001-5889-4463]
+synonym: "Decreased circumference of cranium" EXACT layperson [https://orcid.org/0000-0001-5889-4463]
+synonym: "Decreased size of cranium" EXACT [https://orcid.org/0000-0001-5889-4463]
+synonym: "Decreased size of head" BROAD layperson [https://orcid.org/0000-0001-5889-4463]
+synonym: "Decreased size of skull" EXACT layperson [https://orcid.org/0000-0001-5889-4463]
+synonym: "Reduced head circumference" EXACT layperson []
+synonym: "small calvarium" NARROW [https://orcid.org/0000-0001-5889-4463]
+synonym: "small cranium" EXACT [https://orcid.org/0000-0001-5889-4463]
+synonym: "Small head" BROAD layperson [https://orcid.org/0000-0001-5889-4463]
+synonym: "Small head circumference" EXACT layperson []
+synonym: "Small skull" BROAD layperson [https://orcid.org/0000-0001-5889-4463]
+xref: Fyler:4310
+xref: SNOMEDCT_US:271611007
+xref: UMLS:C4551563
+is_a: HP:0007364 ! Aplasia/Hypoplasia of the cerebrum
+is_a: HP:0040195 ! Decreased head circumference
+
+[Term]
+id: HP:0000365
+name: Hearing impairment
+alt_id: HP:0000404
+alt_id: HP:0001728
+alt_id: HP:0001729
+alt_id: HP:0001754
+alt_id: HP:0008560
+alt_id: HP:0008563
+def: "A decreased magnitude of the sensory perception of sound." [https://orcid.org/0000-0002-0736-9199]
+comment: Hearing loss can be categorized by which part of the auditory system is damaged, as conductive hearing loss, sensorineural hearing loss, and mixed hearing loss. Another axis of classification uses the degree of hearing impairment. The degree of hearing loss is computed by using a three frequency average taken at 500 Hz, 1,000 Hz and 2,000 Hz. The average of these three frequencies is called the Pure Tone Average (PTA). 0-20 dB is considered normal, 21-40 dB mild loss, 41-60 dB moderate loss, 61-70 dB moderately severe loss,71-90 dB severe loss, and greater than 90 dB profound loss. Note that the word deafness is occasionally used to describe partial hearing loss. The World Health Organization uses the word deafness to refer to complete loss of the ability to hear, and hearing impairment to refer to any degree of reduced hearing.
+synonym: "Deafness" EXACT layperson []
+synonym: "Hearing defect" EXACT layperson []
+synonym: "Hearing impairment" EXACT layperson []
+synonym: "Hearing loss" RELATED layperson []
+synonym: "Hypacusis" EXACT []
+synonym: "Hypoacusis" RELATED []
+xref: Fyler:4868
+xref: SNOMEDCT_US:103276001
+xref: SNOMEDCT_US:15188001
+xref: SNOMEDCT_US:343087000
+xref: SNOMEDCT_US:95828007
+xref: UMLS:C0011053
+xref: UMLS:C0018772
+xref: UMLS:C0339789
+xref: UMLS:C1384666
+is_a: HP:0000364 ! Hearing abnormality
+
+[Term]
+id: HP:0000961
+name: Cyanosis
+def: "Bluish discoloration of the skin and mucosa due to poor circulation or inadequate oxygenation of arterial or capillary blood." [PMID:25658213]
+synonym: "Blue discoloration of the skin" EXACT layperson [https://orcid.org/0000-0002-6548-5200]
+xref: SNOMEDCT_US:119419001
+xref: SNOMEDCT_US:3415004
+xref: UMLS:C0010520
+is_a: HP:0001005 ! Dermatological manifestations of systemic disorders
+
+[Term]
+id: HP:0001250
+name: Seizure
+alt_id: HP:0001275
+alt_id: HP:0001303
+alt_id: HP:0002125
+alt_id: HP:0002182
+alt_id: HP:0002279
+alt_id: HP:0002306
+alt_id: HP:0002348
+alt_id: HP:0002391
+alt_id: HP:0002417
+alt_id: HP:0002430
+alt_id: HP:0002431
+alt_id: HP:0002432
+alt_id: HP:0002434
+alt_id: HP:0002437
+alt_id: HP:0002466
+alt_id: HP:0002479
+alt_id: HP:0002794
+alt_id: HP:0006997
+alt_id: HP:0010520
+def: "A seizure is an intermittent abnormality of nervous system physiology characterized by a transient occurrence of signs and/or symptoms due to abnormal excessive or synchronous neuronal activity in the brain." [https://orcid.org/0000-0002-0736-9199, PMID:15816939]
+comment: A type of electrographic seizure has been proposed in neonates which does not have a clinical correlate, it is electrographic only. The term epilepsy is not used to describe recurrent febrile seizures. Epilepsy presumably reflects an abnormally reduced seizure threshold.
+synonym: "Epilepsy" RELATED layperson []
+synonym: "Epileptic seizure" EXACT []
+synonym: "Seizures" EXACT plural_form []
+xref: SNOMEDCT_US:128613002
+xref: SNOMEDCT_US:246545002
+xref: SNOMEDCT_US:313307000
+xref: SNOMEDCT_US:84757009
+xref: SNOMEDCT_US:91175000
+xref: UMLS:C0014544
+xref: UMLS:C0036572
+is_a: HP:0012638 ! Abnormal nervous system physiology
+
+[Term]
+id: HP:0001263
+name: Global developmental delay
+alt_id: HP:0000754
+alt_id: HP:0001255
+alt_id: HP:0001277
+alt_id: HP:0001292
+alt_id: HP:0002433
+alt_id: HP:0002473
+alt_id: HP:0002532
+alt_id: HP:0006793
+alt_id: HP:0006867
+alt_id: HP:0006885
+alt_id: HP:0006935
+alt_id: HP:0007005
+alt_id: HP:0007094
+alt_id: HP:0007106
+alt_id: HP:0007174
+alt_id: HP:0007224
+alt_id: HP:0007228
+alt_id: HP:0007342
+alt_id: HP:0025356
+def: "A delay in the achievement of motor or mental milestones in the domains of development of a child, including motor skills, speech and language, cognitive skills, and social and emotional skills. This term should only be used to describe children younger than five years of age." [https://orcid.org/0000-0002-6410-0882, https://orcid.org/0009-0006-4530-3154]
+comment: Developmental retardation is any significant lag in development in the any or all of the physical, cognitive, behavioral, emotional, or social spheres. Note that the term intellectual disability (mental retardation) refers to not merely a delay in development but rather a permanent limitation. Note that the term 'psychomotor retardation' is also used in some contexts to refer to a slowing of thought and physical movements as a result of major depression or intoxication.
+synonym: "Cognitive delay" RELATED []
+synonym: "Delayed cognitive development" EXACT []
+synonym: "Delayed development" EXACT []
+synonym: "Delayed developmental milestones" EXACT []
+synonym: "Delayed intellectual development" EXACT []
+synonym: "Delayed milestones" EXACT []
+synonym: "Delayed psychomotor development" EXACT []
+synonym: "Developmental delay" EXACT []
+synonym: "Developmental delay in early childhood" EXACT []
+synonym: "Developmental delay, global" EXACT []
+synonym: "Developmental retardation" EXACT []
+synonym: "GDD" EXACT abbreviation []
+synonym: "Lack of psychomotor development" EXACT []
+synonym: "Mental and motor retardation" RELATED []
+synonym: "Motor and developmental delay" EXACT []
+synonym: "Motormental retardation" EXACT []
+synonym: "Psychomotor delay" EXACT []
+synonym: "Psychomotor development deficiency" EXACT []
+synonym: "Psychomotor development failure" EXACT []
+synonym: "Psychomotor developmental delay" EXACT []
+synonym: "Retarded development" EXACT []
+synonym: "Retarded mental development" EXACT []
+synonym: "Retarded psychomotor development" EXACT []
+xref: SNOMEDCT_US:224958001
+xref: UMLS:C0557874
+xref: UMLS:C1864897
+xref: UMLS:C4020875
+is_a: HP:0012758 ! Neurodevelopmental delay
+
+[Term]
+id: HP:0002011
+name: Morphological central nervous system abnormality
+alt_id: HP:0002405
+alt_id: HP:0002413
+alt_id: HP:0002481
+alt_id: HP:0007319
+def: "A structural abnormality of the central nervous system." [https://orcid.org/0000-0002-0736-9199]
+synonym: "Abnormality of the central nervous system" EXACT []
+synonym: "Central nervous system disease" RELATED []
+synonym: "Morphological abnormality of the central nervous system" EXACT []
+synonym: "Morphological abnormality of the CNS" EXACT abbreviation []
+xref: SNOMEDCT_US:23853001
+xref: UMLS:C0007682
+xref: UMLS:C4021765
+is_a: HP:0012639 ! Abnormal nervous system morphology
+
+[Term]
+id: HP:0002027
+name: Abdominal pain
+def: "An unpleasant sensation characterized by physical discomfort (such as pricking, throbbing, or aching) and perceived to originate in the abdomen." [https://orcid.org/0000-0002-0736-9199]
+comment: Abdominal pain can be crampy, achy, dull, intermittent or sharp. The terms stomach ache and stomach cramps are nonmedical terms often used to describe pain in the mid- or upper abdominal area, even though it is not the case that the (smooth) muscles of the stomach or the abdomen have cramps. Stomach pain is another layperson term commonly used to refer to abdominal pain.
+subset: hposlim_core
+synonym: "Abdominal discomfort" RELATED layperson []
+synonym: "Abdominal pain" EXACT layperson []
+synonym: "Gastro pain" BROAD layperson []
+synonym: "Gastrointestinal pain" BROAD layperson []
+synonym: "Pain in stomach" EXACT layperson []
+synonym: "Stomach pain" EXACT layperson [https://orcid.org/0000-0002-0736-9199]
+synonym: "Upset stomach" RELATED layperson [https://orcid.org/0000-0001-6439-2224]
+xref: MEDDRA:10000081 "Abdominal pain"
+xref: SNOMEDCT_US:21522001
+xref: UMLS:C0000737
+is_a: HP:0011458 ! Abdominal symptom
+is_a: HP:0012531 ! Pain
+
+[Term]
+id: HP:0003002
+name: Breast carcinoma
+def: "The presence of a carcinoma of the breast." [https://orcid.org/0000-0002-0736-9199]
+synonym: "Breast cancer" EXACT layperson []
+xref: NCIT:C2916
+xref: SNOMEDCT_US:254838004
+xref: UMLS:C0678222
+is_a: HP:0100013 ! Neoplasm of the breast
+
+[Term]
+id: HP:0003641
+name: Hemoglobinuria
+def: "The presence of free hemoglobin in the urine." [https://orcid.org/0000-0002-0736-9199]
+comment: If, following hemolysis, haptoglobins (hemoglobin-binding proteins) are saturated, then free hemoglobin appears in the urine.
+synonym: "Haemoglobin in urine" EXACT uk_spelling []
+synonym: "Hemoglobin in urine" EXACT layperson [https://orcid.org/0000-0001-5208-3432]
+xref: SNOMEDCT_US:68600005
+xref: UMLS:C0019048
+is_a: HP:0033354 ! Abnormal urine metabolite level
+
+[Term]
+id: HP:0011968
+name: Feeding difficulties
+def: "Impaired ability to eat related to problems gathering food and getting ready to suck, chew, or swallow it." [https://orcid.org/0000-0002-6647-5493, PMID:34006516]
+comment: Difficulties with eating and drinking, resulting in decreased oral nutrition
+subset: hposlim_core
+synonym: "Decreased oral intake" EXACT []
+synonym: "Feeding difficulties" EXACT layperson []
+synonym: "Feeding problems" EXACT layperson []
+synonym: "Poor feeding" EXACT layperson []
+xref: SNOMEDCT_US:78164000
+xref: UMLS:C0232466
+is_a: HP:0011458 ! Abdominal symptom
+property_value: terms:creator https://orcid.org/0000-0002-0736-9199
+property_value: terms:date "2012-07-18T10:25:05Z" xsd:dateTime
+
+[Term]
+id: HP:0012759
+name: Neurodevelopmental abnormality
+def: "A deviation from normal of the neurological development of a child, which may include any or all of the aspects of the development of personal, social, gross or fine motor, and cognitive abilities." [HPO_CONTRIBUTOR:KI_phemming]
+comment: This term should be used to describe abnormalities with onset in the developmental period.
+xref: UMLS:C4022737
+is_a: HP:0012638 ! Abnormal nervous system physiology
+property_value: terms:creator https://orcid.org/0000-0002-0736-9199
+property_value: terms:date "2014-04-03T12:20:28Z" xsd:dateTime
+
+[Term]
+id: HP:0025748
+name: Restricted tongue movement
+def: "Limited ability to move the tongue related to mechanical restrictions such as akyloglossia and not associated with tongue muscle weakness." []
+is_a: HP:0000182 ! Movement abnormality of the tongue
+property_value: terms:creator https://orcid.org/0000-0002-0736-9199
+property_value: terms:date "2024-07-06T09:57:51Z" xsd:dateTime
+
+[Term]
+id: HP:0100022
+name: Abnormality of movement
+alt_id: HP:0001294
+def: "An abnormality of movement with a neurological basis characterized by changes in coordination and speed of voluntary movements." [https://orcid.org/0000-0002-0736-9199]
+comment: Movement disorders are characterized by the phenotypic abnormalities including abnormal involuntary movements, akathisia, akinesia, athetosis, ataxia, ballismus, bradykinesia, chorea, dyskinesia, dystonia, and myoclonus tics, tremor, spasms, and stereotypy.
+synonym: "Abnormality of movement" EXACT layperson []
+synonym: "Movement disorder" EXACT layperson []
+synonym: "Unusual movement" EXACT layperson []
+xref: SNOMEDCT_US:60342002
+xref: UMLS:C0026650
+is_a: HP:0012638 ! Abnormal nervous system physiology
+property_value: terms:creator https://orcid.org/0009-0006-4530-3154
+property_value: terms:date "2010-05-28T11:48:50Z" xsd:dateTime
