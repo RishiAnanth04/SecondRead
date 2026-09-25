@@ -1,10 +1,13 @@
-# Phenotype Span Extractor (Stage 1)
+# Rare-Disease Pipeline — Stage 1 Encapsulated
 
-A standalone implementation of **Stage 1** from *"An Auditable, Correctable
-Pipeline for Rare-Disease Diagnosis from Clinical Text"* (Kang, Wang, et al.).
+This repo hosts a multi-stage rare-disease diagnosis pipeline. **Stage 1**
+(phenotype span extraction) lives in the `stage1/` package — a self-contained
+implementation of Stage 1 from *"An Auditable, Correctable Pipeline for
+Rare-Disease Diagnosis from Clinical Text"* (Kang, Wang, et al.).
+
 It maps raw clinical text to **character-anchored, assertion-tagged
 phenotype spans** — the input Stage 2 (HPO linking) and Stage 3 (disease
-ranking) would consume in the full pipeline.
+ranking) consume downstream.
 
 ## Architecture
 
@@ -100,6 +103,7 @@ pip install -r requirements.txt
 
 # hp.obo is downloaded automatically on first run if not present
 python cli.py --text "Patient has microcephaly and denies seizures." --json
+# equivalent: python -m stage1 --text "..."
 
 # or from a file
 python cli.py --file note.txt
@@ -111,7 +115,7 @@ python cli.py --obo hp.obo --no-download --file note.txt
 Programmatic use:
 
 ```python
-from pipeline import PhenotypeExtractor
+from stage1 import PhenotypeExtractor
 
 extractor = PhenotypeExtractor.from_obo("hp.obo")  # downloads if missing
 spans = extractor.extract("Patient has microcephaly and denies seizures.")
@@ -122,15 +126,15 @@ for s in spans:
 
 ## Tests
 
-The `tests/` directory has 54 pytest unit + integration tests covering
-every module. They run against `tests/fixtures/mini_hp.obo`, a small
+`tests/stage1/` has 58 pytest unit + integration tests covering every Stage 1
+module. They run against `tests/stage1/fixtures/mini_hp.obo`, a small
 14-term excerpt of the real ontology, so the suite is fast (~2s) and needs
 **no network access** and **no full hp.obo download**.
 
 ```bash
 pip install -r requirements.txt   # needed once, for spaCy + pytest
-python -m pytest -v               # run everything (uses PYTHONPATH via pytest.ini)
-python -m pytest tests/test_lab_value_backend.py -v   # run one module's tests
+python -m pytest -v               # run everything (pythonpath=. via pytest.ini)
+python -m pytest tests/stage1/test_lab_value_backend.py -v
 python -m pytest -k "negation"    # run tests matching a keyword
 ```
 
@@ -138,14 +142,14 @@ What's covered:
 
 | Test file | Covers |
 |---|---|
-| `test_hpo_obo_parser.py` | `.obo` parsing: term count, names, synonym scopes, obsolete filtering |
-| `test_lexicon_builder.py` | All 4 lexicon layers (canonical/BROAD exclusion, inflection, US/UK spelling, paraphrases, manual synonyms), layer cumulativeness |
-| `test_dictionary_backend.py` | Exact match, plural/inflected match, greedy longest-match-first, no false positives, char-offset accuracy |
-| `test_noun_phrase_backend.py` | Structural filter (digits, lab abbreviations), semantic filter (normalcy markers, treatment framing, bare anatomy) |
-| `test_lab_value_backend.py` | All 6 regex surface forms, blocklist false-positive suppression, no overlapping spans |
-| `test_assertion.py` | Negation cue detection, sentence-boundary clipping, multi-word cues |
-| `test_filters.py` | Stoplist (dict-backend-only scope), medication filter, dedup key, (disabled-by-default) subsumed-span removal and junk filter |
-| `test_pipeline.py` | Full end-to-end extraction, filters applied in sequence, backend toggling, output ordering |
+| `tests/stage1/test_hpo_obo_parser.py` | `.obo` parsing: term count, names, synonym scopes, obsolete filtering |
+| `tests/stage1/test_lexicon_builder.py` | All 4 lexicon layers (canonical/BROAD exclusion, inflection, US/UK spelling, paraphrases, manual synonyms), layer cumulativeness |
+| `tests/stage1/test_dictionary_backend.py` | Exact match, plural/inflected match, greedy longest-match-first, no false positives, char-offset accuracy |
+| `tests/stage1/test_noun_phrase_backend.py` | Structural filter (digits, lab abbreviations), semantic filter (normalcy markers, treatment framing, bare anatomy) |
+| `tests/stage1/test_lab_value_backend.py` | All 6 regex surface forms, blocklist false-positive suppression, no overlapping spans |
+| `tests/stage1/test_assertion.py` | Negation cue detection, sentence-boundary clipping, multi-word cues |
+| `tests/stage1/test_filters.py` | Stoplist (dict-backend-only scope), medication filter, dedup key, (disabled-by-default) subsumed-span removal and junk filter |
+| `tests/stage1/test_pipeline.py` | Full end-to-end extraction, filters applied in sequence, backend toggling, output ordering |
 
 If you want to test against the **real, full-size** `hp.obo` instead of the
 fixture (e.g. to sanity-check layer counts match the paper's reported
@@ -162,26 +166,29 @@ Section III-A and Appendix A. It does **not** reproduce the paper's exact
 GSC+ stoplist or medication vocabulary (those were derived from a
 201-abstract training partition not included in the paper), and the
 manual-synonym layer ships only a few illustrative entries — both are
-easy to extend by editing `filters.DEFAULT_STOPLIST`,
-`filters.build_medication_vocab()`, or passing a TSV via
-`lexicon_builder.load_manual_synonyms_tsv()`.
+easy to extend by editing `stage1.filters.DEFAULT_STOPLIST`,
+`stage1.filters.build_medication_vocab()`, or passing a TSV via
+`stage1.lexicon_builder.load_manual_synonyms_tsv()`.
 
-Stage 1 output here is the natural handoff point to a Stage 2 HPO linker
-(e.g. a SapBERT bi-encoder, as in the paper) — this repo stops at
-character-anchored, assertion-tagged spans plus (for dictionary-backend
-hits) candidate HPO IDs.
+Stage 1 output is the handoff point to a Stage 2 HPO linker
+(e.g. a SapBERT bi-encoder, as in the paper). Add later stages as sibling
+packages (`stage2/`, …) that consume `List[Span]` from
+`stage1.PhenotypeExtractor`.
 
-## Files
+## Layout
 
-| File | Purpose |
+| Path | Purpose |
 |---|---|
-| `models.py` | `Span`, `Assertion`, `Source` data structures |
-| `hpo_obo_parser.py` | Downloads/parses `hp.obo` |
-| `lexicon_builder.py` | 4-layer surface-form lexicon |
-| `dictionary_backend.py` | N-gram hash lookup matcher |
-| `noun_phrase_backend.py` | spaCy noun-chunk backend |
-| `lab_value_backend.py` | Regex-cascade lab-value backend |
-| `assertion.py` | Negation/assertion tagging |
-| `filters.py` | Stoplist, medication filter, dedup, (disabled) subsumed/junk filters |
-| `pipeline.py` | Orchestrates backends + filters into `PhenotypeExtractor` |
-| `cli.py` | Command-line entry point |
+| `stage1/` | Encapsulated Stage 1 package |
+| `stage1/models.py` | `Span`, `Assertion`, `Source` data structures |
+| `stage1/hpo_obo_parser.py` | Downloads/parses `hp.obo` |
+| `stage1/lexicon_builder.py` | 4-layer surface-form lexicon |
+| `stage1/dictionary_backend.py` | N-gram hash lookup matcher |
+| `stage1/noun_phrase_backend.py` | spaCy noun-chunk backend |
+| `stage1/lab_value_backend.py` | Regex-cascade lab-value backend |
+| `stage1/assertion.py` | Negation/assertion tagging |
+| `stage1/filters.py` | Stoplist, medication filter, dedup, (disabled) subsumed/junk filters |
+| `stage1/pipeline.py` | Orchestrates backends + filters into `PhenotypeExtractor` |
+| `stage1/cli.py` | Stage 1 CLI (`python -m stage1`) |
+| `cli.py` / `example.py` | Thin repo-root wrappers |
+| `tests/stage1/` | Stage 1 unit + integration tests |

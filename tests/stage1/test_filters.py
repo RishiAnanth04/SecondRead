@@ -1,7 +1,7 @@
-from filters import (apply_medication_filter, apply_stoplist,
+from stage1.filters import (apply_medication_filter, apply_stoplist,
                       build_medication_vocab, deduplicate, junk_filter,
                       remove_subsumed_spans)
-from models import Source, Span
+from stage1.models import Source, Span
 
 
 def _span(text, start, end, source=Source.HPO_DICT):

@@ -16,7 +16,7 @@ from __future__ import annotations
 
 from typing import List, Set
 
-from models import Source, Span
+from .models import Source, Span
 
 # ---------------------------------------------------------------------------
 # Stoplist: valid HPO surface forms that are usually non-phenotype modifiers

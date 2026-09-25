@@ -14,8 +14,8 @@ from __future__ import annotations
 import re
 from typing import Dict, List, Set, Tuple
 
-from lexicon_builder import HPOLexicon
-from models import Source, Span
+from .lexicon_builder import HPOLexicon
+from .models import Source, Span
 
 _TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z0-9]*")
 _ABBR_RE = re.compile(r"\(([A-Z]{2,6})\)")

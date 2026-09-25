@@ -12,7 +12,7 @@ from __future__ import annotations
 import re
 from typing import List
 
-from models import Source, Span
+from .models import Source, Span
 
 # shared unit sub-pattern: SI units + scientific-notation prefixes
 _UNIT = (

@@ -1,5 +1,5 @@
-from assertion import tag_assertions
-from models import Assertion, Source, Span
+from stage1.assertion import tag_assertions
+from stage1.models import Assertion, Source, Span
 
 
 def _span(text, start, end):

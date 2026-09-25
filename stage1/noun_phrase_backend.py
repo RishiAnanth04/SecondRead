@@ -12,7 +12,7 @@ from typing import List
 
 import spacy
 
-from models import Source, Span
+from .models import Source, Span
 
 _DIGIT_RE = re.compile(r"\d")
 _NON_ALPHA_BOUNDARY_RE = re.compile(r"^[^A-Za-z]+|[^A-Za-z]+$")

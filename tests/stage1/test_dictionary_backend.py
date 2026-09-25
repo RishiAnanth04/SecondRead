@@ -1,4 +1,4 @@
-from models import Source
+from stage1.models import Source
 
 
 def test_matches_canonical_term(fixture_matcher):

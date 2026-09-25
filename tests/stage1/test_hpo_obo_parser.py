@@ -1,5 +1,8 @@
-from hpo_obo_parser import parse_hp_obo
-from conftest import FIXTURE_OBO
+import os
+
+from stage1.hpo_obo_parser import parse_hp_obo
+
+FIXTURE_OBO = os.path.join(os.path.dirname(__file__), "fixtures", "mini_hp.obo")
 
 
 def test_parses_expected_term_count():

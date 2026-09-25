@@ -1,4 +1,4 @@
-from lexicon_builder import build_lexicon, _inflect_surface_form, _template_paraphrases
+from stage1.lexicon_builder import build_lexicon, _inflect_surface_form, _template_paraphrases
 
 
 def test_layer1_contains_canonical_name(fixture_terms):

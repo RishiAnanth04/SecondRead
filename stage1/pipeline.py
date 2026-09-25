@@ -13,15 +13,15 @@ import os
 from dataclasses import dataclass
 from typing import List, Optional, Set
 
-from assertion import tag_assertions
-from dictionary_backend import DictionaryMatcher
-from filters import (apply_medication_filter, apply_stoplist,
+from .assertion import tag_assertions
+from .dictionary_backend import DictionaryMatcher
+from .filters import (apply_medication_filter, apply_stoplist,
                       build_medication_vocab, deduplicate)
-from hpo_obo_parser import download_hp_obo, parse_hp_obo
-from lab_value_backend import extract_lab_value_spans
-from lexicon_builder import DEFAULT_MANUAL_SYNONYMS, build_lexicon, HPOLexicon
-from models import Span
-from noun_phrase_backend import extract_noun_phrase_spans
+from .hpo_obo_parser import download_hp_obo, parse_hp_obo
+from .lab_value_backend import extract_lab_value_spans
+from .lexicon_builder import DEFAULT_MANUAL_SYNONYMS, build_lexicon, HPOLexicon
+from .models import Span
+from .noun_phrase_backend import extract_noun_phrase_spans
 
 
 @dataclass
@@ -85,11 +85,11 @@ class PhenotypeExtractor:
             pooled = apply_medication_filter(pooled, vocab)
 
         if self.config.apply_subsumed_span_removal:
-            from filters import remove_subsumed_spans
+            from .filters import remove_subsumed_spans
             pooled = remove_subsumed_spans(pooled)
 
         if self.config.apply_junk_filter:
-            from filters import junk_filter
+            from .filters import junk_filter
             pooled = junk_filter(pooled)
 
         pooled.sort(key=lambda s: (s.start, s.end))

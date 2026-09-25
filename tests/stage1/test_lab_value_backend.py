@@ -1,4 +1,4 @@
-from lab_value_backend import extract_lab_value_spans
+from stage1.lab_value_backend import extract_lab_value_spans
 
 
 def test_colon_delimited_form():

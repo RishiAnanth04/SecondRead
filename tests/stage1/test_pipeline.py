@@ -1,5 +1,5 @@
-from models import Assertion, Source
-from pipeline import PhenotypeExtractor, PipelineConfig
+from stage1.models import Assertion, Source
+from stage1.pipeline import PhenotypeExtractor, PipelineConfig
 
 
 def test_pipeline_extracts_and_dedupes(fixture_lexicon):

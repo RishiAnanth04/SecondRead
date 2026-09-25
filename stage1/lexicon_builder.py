@@ -16,7 +16,7 @@ import re
 from collections import defaultdict
 from typing import Dict, Set
 
-from hpo_obo_parser import HPOTerm
+from .hpo_obo_parser import HPOTerm
 
 # ---------------------------------------------------------------------------
 # Layer 2: morphological inflection

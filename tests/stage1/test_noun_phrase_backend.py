@@ -1,4 +1,4 @@
-from noun_phrase_backend import extract_noun_phrase_spans
+from stage1.noun_phrase_backend import extract_noun_phrase_spans
 
 
 def test_extracts_a_plausible_phenotype_phrase():
