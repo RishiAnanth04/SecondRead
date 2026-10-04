@@ -35,6 +35,10 @@ pip-wheel-metadata/
 .env.*
 !.env.example
 
+# Sensitive local data (keep folder_usage.md so the folder stays in the repo)
+/data/*
+!/data/folder_usage.md
+
 # OS / editor
 .DS_Store
 Thumbs.db
